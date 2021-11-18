@@ -89,10 +89,10 @@ public:
 	 friend bool operator == (const Person& R_person, const Person& L_person) {
 		 if (R_person.m_O.has_value() && L_person.m_O.has_value())
 			 return tie(R_person.m_F, R_person.m_I, R_person.m_O.value()) ==
-			 tie(L_person.m_F, L_person.m_I, L_person.m_O.value());
+					tie(L_person.m_F, L_person.m_I, L_person.m_O.value());
 		 else
 			 return tie(R_person.m_F, R_person.m_I) ==
-			 tie(L_person.m_F, L_person.m_I);
+					tie(L_person.m_F, L_person.m_I);
 	 }
 };
 
@@ -115,6 +115,6 @@ int main() {
 
 	std::cout << (person0 == person1) << std::endl;
 	std::cout << (person0 == person0) << std::endl;
-
+	
 	return 0;
 }
