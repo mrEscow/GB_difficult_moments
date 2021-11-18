@@ -61,14 +61,12 @@ private:
 	std::string m_I;
 	std::optional<std::string> m_O;
 public:
-	 Person(std::string F, std::string I)
-		:
-		m_F(F), m_I(I)
-	{}
-	 Person(std::string F, std::string I, std::string O)
-		 :
-		 m_F(F), m_I(I), m_O(O)
+	 Person(std::string F, std::string I) : m_F(F), m_I(I)
 	 {}
+	 Person(std::string F, std::string I, std::string O) : Person(F,I)
+	 {
+		 m_O = O;
+	 }
 
 	 friend std::ostream& operator << (std::ostream& out, const Person& person)
 	 {
