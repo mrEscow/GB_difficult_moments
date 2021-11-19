@@ -59,6 +59,7 @@
 #include <string>
 #include <sstream>
 #include <iomanip>
+#include <algorithm>
 
 struct Person
 {
@@ -167,6 +168,7 @@ struct PhoneNumber
 //Конструктор этого класса должен принимать параметр типа ifstream – поток данных, полученных из файла.
 //В теле конструктора происходит считывание данных из файла и заполнение контейнера.
 //Класс PhoneBook должен содержать перегруженный оператор вывода, для вывода всех данных из контейнера в консоль.
+// 
 //В классе PhoneBook реализуйте метод SortByName, который должен сортировать элементы контейнера по фамилии людей в алфавитном порядке.
 //Если фамилии будут одинаковыми, то сортировка должна выполняться по именам, если имена будут одинаковы, то сортировка производится по отчествам.
 //Используйте алгоритмическую функцию sort.
@@ -246,13 +248,9 @@ public:
 					count = 0;
 					p.m_O.reset();
 					f.m_extension_number.reset();
-				}
-							
-			}
-			
+				}							
+			}			
 		}
-
-
 		file.close();
 	}
 
@@ -260,6 +258,20 @@ public:
 		for (auto& [p, f] : phone_book.m_vec_phone_book)
 			 std::cout << p << "\t" << f << std::endl;
 	}
+
+	void SortByName(){
+		std::sort(m_vec_phone_book.begin(), m_vec_phone_book.end(),
+			[&] (const std::pair<Person, PhoneNumber>& L, const std::pair<Person, PhoneNumber>& R) {
+			return L.first < R.first;
+		});
+	};
+
+	void SortByPhone() {
+		std::sort(m_vec_phone_book.begin(), m_vec_phone_book.end(),
+			[&](const std::pair<Person, PhoneNumber>& L, const std::pair<Person, PhoneNumber>& R) {
+				return L.second < R.second;
+			});
+	};
 };
 
 int main() {
@@ -272,7 +284,13 @@ int main() {
 
 	std::cout << book;
 
+	std::cout << "------SortByPhone-------" << std::endl;
+	book.SortByPhone();
+	std::cout << book;
 
+	std::cout << "------SortByName--------" << std::endl;
+	book.SortByName();
+	std::cout << book;
 
 
 
