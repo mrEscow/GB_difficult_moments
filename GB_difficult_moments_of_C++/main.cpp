@@ -65,40 +65,41 @@ struct Person
 	std::string m_F;
 	std::string m_I;
 	std::optional<std::string> m_O;
-//public:
-//	 Person(std::string F, std::string I) : m_F(F), m_I(I)
-//	 {}
-//	 Person(std::string F, std::string I, std::string O) : Person(F,I)
-//	 {
-//		 m_O = O;
-//	 }
+public:
+	Person(){}
+	Person(std::string F, std::string I) : m_F(F), m_I(I)
+	{}
+	Person(std::string F, std::string I, std::optional<std::string> O) : Person(F,I)
+	{
+		m_O = O;
+	}
 
-	 friend std::ostream& operator << (std::ostream& out, const Person& person)
-	 {
-		 if (person.m_O.has_value())
-			 out << std::setw(12) << person.m_F << std::setw(1) << "" << std::setw(10) << person.m_I << "" << std::setw(15) << person.m_O.value();
-		 else
-			 out << std::setw(12) << person.m_F << std::setw(1) << "" << std::setw(10) << person.m_I << "" << std::setw(15);
-		 return out;
-	 }
+	friend std::ostream& operator << (std::ostream& out, const Person& person)
+	{
+		if (person.m_O.has_value())
+			out << std::setw(12) << person.m_F << std::setw(1) << "" << std::setw(10) << person.m_I << "" << std::setw(15) << person.m_O.value();
+		else
+			out << std::setw(12) << person.m_F << std::setw(1) << "" << std::setw(10) << person.m_I << "" << std::setw(15);
+		return out;
+	}
 
-	 friend bool operator < (const Person& L_person, const Person& R_person) {
-		 if (R_person.m_O.has_value() && L_person.m_O.has_value())
-			 return tie(L_person.m_F, L_person.m_I, L_person.m_O.value()) <
+	friend bool operator < (const Person& L_person, const Person& R_person) {
+		if (R_person.m_O.has_value() && L_person.m_O.has_value())
+			return tie(L_person.m_F, L_person.m_I, L_person.m_O.value()) <
 					tie(R_person.m_F, R_person.m_I, R_person.m_O.value());
-		 else
-			 return tie(L_person.m_F, L_person.m_I) <
+		else
+			return tie(L_person.m_F, L_person.m_I) <
 					tie(R_person.m_F, R_person.m_I);
-	 }
+	}
 
-	 friend bool operator == (const Person& L_person, const Person& R_person) {
-		 if (R_person.m_O.has_value() && L_person.m_O.has_value())
-			 return tie(L_person.m_F, L_person.m_I, L_person.m_O.value()) ==
+	friend bool operator == (const Person& L_person, const Person& R_person) {
+		if (R_person.m_O.has_value() && L_person.m_O.has_value())
+			return tie(L_person.m_F, L_person.m_I, L_person.m_O.value()) ==
 					tie(R_person.m_F, R_person.m_I, R_person.m_O.value());
-		 else
-			 return tie(L_person.m_F, L_person.m_I) ==
+		else
+			return tie(L_person.m_F, L_person.m_I) ==
 					tie(R_person.m_F, R_person.m_I);
-	 }
+	}
 };
 
 //Создайте структуру PhoneNumber с 4 полями:
@@ -121,17 +122,18 @@ struct PhoneNumber
 	unsigned int m_city_code;
 	std::string	m_number;
 	std::optional<unsigned int> m_extension_number;
-//public:
-//	PhoneNumber(unsigned int country_code,unsigned int city_code,std::string number)
-//		:
-//		m_country_code(country_code), m_city_code(city_code), m_number(number)
-//	{}
-//	PhoneNumber(unsigned int country_code, unsigned int city_code, std::string number, unsigned int extension_number)
-//		:
-//		PhoneNumber(country_code, city_code, number)
-//	{
-//		m_extension_number = extension_number;
-//	}
+public:
+	PhoneNumber(){}
+	PhoneNumber(unsigned int country_code,unsigned int city_code,std::string number)
+		:
+		m_country_code(country_code), m_city_code(city_code), m_number(number)
+	{}
+	PhoneNumber(unsigned int country_code, unsigned int city_code, std::string number, std::optional<unsigned int> extension_number)
+		:
+		PhoneNumber(country_code, city_code, number)
+	{
+		m_extension_number = extension_number;
+	}
 
 	friend std::ostream& operator << (std::ostream& out, const PhoneNumber& pn)
 	{
@@ -175,8 +177,8 @@ public:
 			std::string str;
 			std::istringstream ist;
 			unsigned int n;
-			Person p;
-			PhoneNumber f;
+			Person person;
+			PhoneNumber phone_number;
 			int count{ 0 };
 			bool is_person{ 0 };
 			bool is_phone_number{ 0 };
@@ -188,32 +190,32 @@ public:
 					switch (count)
 					{
 					case 0:
-						file >> p.m_F;
+						file >> person.m_F;
 						break;
 					case 1:
-						file >> p.m_I;
+						file >> person.m_I;
 						break;
 					case 2:
 						file >> str;
 						if (str != "-")
-							 p.m_O = std::make_optional(str);
+							person.m_O = std::make_optional(str);
 						is_person = true;
 						break;
 					case 3:
-						file >> f.m_country_code;
+						file >> phone_number.m_country_code;
 						break;
 					case 4:
-						file >> f.m_city_code;
+						file >> phone_number.m_city_code;
 						break;
 					case 5:
-						file >> f.m_number;
+						file >> phone_number.m_number;
 						break;
 					case 6:
 						file >> str;						
 						if (str != "-") {
 							ist.str(str);
 							ist >> n;
-							f.m_extension_number = std::make_optional(n);
+							phone_number.m_extension_number = std::make_optional(n);
 						}																											
 						is_phone_number = true;
 						break;
@@ -223,12 +225,12 @@ public:
 				}
 				count++;
 				if (is_person && is_phone_number) {
-					m_vec_phone_book.push_back(std::pair<Person, PhoneNumber>(p, f));
+					m_vec_phone_book.push_back(std::pair<Person, PhoneNumber>(person, phone_number));
 					is_person =  false;
 					is_phone_number = false;
 					count = 0;
-					p.m_O.reset();
-					f.m_extension_number.reset();
+					person.m_O.reset();
+					phone_number.m_extension_number.reset();
 				}							
 			}			
 		}
@@ -263,15 +265,33 @@ public:
 	//Строка должна быть пустой, если найден ровно один человек с заданном фамилией в списке.
 	//Если не найден ни один человек с заданной фамилией, то в строке должна быть запись «not found»,
 	//если было найдено больше одного человека, то в строке должно быть «found more than 1».
-	std::pair<std::string, PhoneNumber> GetPhoneNumber(std::string name) {
+	std::pair<std::string, PhoneNumber> GetPhoneNumber(const std::string& surname) {		
+		PhoneNumber tmp;
+		PhoneNumber number;
+		int count{ 0 };
 		for (auto& [p, f] : m_vec_phone_book) {
-			if (p.m_I == name) {
-
+			if (p.m_F == surname) {
+				count++;
+				if (count == 1)
+					number = f;
 			}
 		}
+
+		if (count == 1) 
+			return std::pair<std::string, PhoneNumber>("", number);
+		if (count == 0)
+			return std::pair<std::string, PhoneNumber>("not found", tmp);
+		if (count > 1)
+			return std::pair<std::string, PhoneNumber>("found more than 1", tmp);
 	}
 	//Реализуйте метод ChangePhoneNumber, который принимает человека и новый номер телефона и,
 	//если находит заданного человека в контейнере, то меняет его номер телефона на новый, иначе ничего не делает.
+	void ChangePhoneNumber(const Person& person,const PhoneNumber& phone_number) {
+		for (auto& [p, f] : m_vec_phone_book) {
+			if (person == p)
+				f = phone_number;
+		}
+	}
 };
 
 int main() {
@@ -292,31 +312,26 @@ int main() {
 	book.SortByName();
 	std::cout << book;
 
+	std::cout << "-----GetPhoneNumber-----" << std::endl;
+	// лямбда функция, которая принимает фамилию и выводит номер телефона этого    	человека, либо строку с ошибкой
+	auto print_phone_number = [&book](const std::string& surname) {
+		std::cout << surname << "\t";
+		auto answer = book.GetPhoneNumber(surname);
+		if (get<0>(answer).empty())
+			std::cout << get<1>(answer);
+		else
+			std::cout << get<0>(answer);
+		std::cout << std::endl;
+	};
 
+	// вызовы лямбды
+	print_phone_number("Ivanov");
+	print_phone_number("Petrov");
 
-	//Person person0{ "Petrov","Vasia"};
-	//Person person1{ "Ivanov","Maksim","Evgenievich"};
-
-	//std::cout << person0 << std::endl;
-	//std::cout << person1 << std::endl;
-
-	//std::cout << (person0 < person1) << std::endl;
-	//std::cout << (person1 < person0) << std::endl;
-
-	//std::cout << (person0 == person1) << std::endl;
-	//std::cout << (person0 == person0) << std::endl;
-
-	//PhoneNumber phoneNumber0{ 7,916,"1234567" };
-	//PhoneNumber phoneNumber1{ 7,916,"7654321" ,123};
-
-	//std::cout << phoneNumber0 << std::endl;
-	//std::cout << phoneNumber1 << std::endl;
-
-	//std::cout << (phoneNumber0 < phoneNumber1) << std::endl;
-	//std::cout << (phoneNumber1 < phoneNumber0) << std::endl;
-
-	//std::cout << (phoneNumber0 == phoneNumber1) << std::endl;
-	//std::cout << (phoneNumber0 == phoneNumber0) << std::endl;
+	std::cout << "----ChangePhoneNumber----" << std::endl;
+	book.ChangePhoneNumber(Person{ "Kotov", "Vasilii", "Eliseevich" }, PhoneNumber{ 7, 123, "15344458", std::nullopt });
+	book.ChangePhoneNumber(Person{ "Mironova", "Margarita", "Vladimirovna" }, PhoneNumber{ 16, 465, "9155448", 13 });
+	std::cout << book;
 	
 	return 0;
 }
