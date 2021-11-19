@@ -8,12 +8,12 @@
 #include "Lesson_1.h"
 
 int main() {
-	setlocale(LC_ALL, "Russian");
-	//SetConsoleOutputCP(8);
-	//SetConsoleCP(8);
 
+	SetConsoleCP(CP_UTF8);
+	SetConsoleOutputCP(CP_UTF8);
+	// привет привет
 
 	Lesson1();
-	// привет
+	
 	return 0;
 }
