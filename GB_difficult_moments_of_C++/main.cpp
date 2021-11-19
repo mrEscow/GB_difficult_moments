@@ -138,22 +138,22 @@ public:
 		return out;
 	}
 
-	friend bool operator < (const PhoneNumber& L_pn, const PhoneNumber& L_person) {
-		if (R_person.m_O.has_value() && L_person.m_O.has_value())
-			return tie(R_person.m_F, R_person.m_I, R_person.m_O.value()) <
-			tie(L_person.m_F, L_person.m_I, L_person.m_O.value());
+	friend bool operator < (const PhoneNumber& L_pn, const PhoneNumber& R_pn) {
+		if (L_pn.m_extension_number.has_value() && R_pn.m_extension_number.has_value())
+			return tie(L_pn.m_country_code, L_pn.m_city_code, L_pn.m_number, L_pn.m_extension_number.value()) <
+					tie(R_pn.m_country_code, R_pn.m_city_code, R_pn.m_number, R_pn.m_extension_number.value());
 		else
-			return tie(R_person.m_F, R_person.m_I) <
-			tie(L_person.m_F, L_person.m_I);
+			return tie(L_pn.m_country_code, L_pn.m_city_code, L_pn.m_number) <
+					tie(R_pn.m_country_code, R_pn.m_city_code, R_pn.m_number);
 	}
 
-	friend bool operator == (const PhoneNumber& R_person, const PhoneNumber& L_person) {
-		if (R_person.m_O.has_value() && L_person.m_O.has_value())
-			return tie(R_person.m_F, R_person.m_I, R_person.m_O.value()) ==
-			tie(L_person.m_F, L_person.m_I, L_person.m_O.value());
+	friend bool operator == (const PhoneNumber& L_pn, const PhoneNumber& R_pn) {
+		if (L_pn.m_extension_number.has_value() && R_pn.m_extension_number.has_value())
+			return tie(L_pn.m_country_code, L_pn.m_city_code, L_pn.m_number, L_pn.m_extension_number.value()) ==
+					tie(R_pn.m_country_code, R_pn.m_city_code, R_pn.m_number, R_pn.m_extension_number.value());
 		else
-			return tie(R_person.m_F, R_person.m_I) ==
-			tie(L_person.m_F, L_person.m_I);
+			return tie(L_pn.m_country_code, L_pn.m_city_code, L_pn.m_number) ==
+					tie(R_pn.m_country_code, R_pn.m_city_code, R_pn.m_number);
 	}
 };
 
@@ -174,6 +174,18 @@ int main() {
 
 	std::cout << (person0 == person1) << std::endl;
 	std::cout << (person0 == person0) << std::endl;
+
+	PhoneNumber phoneNumber0{ 7,916,"1234567" };
+	PhoneNumber phoneNumber1{ 7,916,"7654321" ,123};
+
+	std::cout << phoneNumber0 << std::endl;
+	std::cout << phoneNumber1 << std::endl;
+
+	std::cout << (phoneNumber0 < phoneNumber1) << std::endl;
+	std::cout << (phoneNumber1 < phoneNumber0) << std::endl;
+
+	std::cout << (phoneNumber0 == phoneNumber1) << std::endl;
+	std::cout << (phoneNumber0 == phoneNumber0) << std::endl;
 	
 	return 0;
 }
