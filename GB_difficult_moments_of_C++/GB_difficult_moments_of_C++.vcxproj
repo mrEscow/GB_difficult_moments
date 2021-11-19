@@ -152,6 +152,9 @@
   <ItemGroup>
     <Text Include="PhoneBook.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Lesson_1.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

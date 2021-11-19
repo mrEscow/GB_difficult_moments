@@ -22,4 +22,9 @@
   <ItemGroup>
     <Text Include="PhoneBook.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Lesson_1.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
