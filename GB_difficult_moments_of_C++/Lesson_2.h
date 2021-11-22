@@ -50,7 +50,7 @@ void SortPointers(std::vector<T>& vec) {
 
 
 int Lesson2() {
-
+	std::cout << "----------------" << std::endl;
 	{
 		int a = 10;
 		int b = 20;
@@ -72,7 +72,7 @@ int Lesson2() {
 		std::cout << *ap << std::endl;
 		std::cout << *bp << std::endl;
 	}
-
+	std::cout << "----------------" << std::endl;
 	{
 		int a = 10;
 		int b = 5;
@@ -113,8 +113,7 @@ int Lesson2() {
 			std::cout << *v << "  ";
 		std::cout << "\n";
 	}
-
-
+	std::cout << "----------------" << std::endl;
 	{
 		//Подсчитайте количество гласных букв в книге “Война и мир”.Для подсчета используйте 4 способа:
 		//○  count_if и find
@@ -122,11 +121,34 @@ int Lesson2() {
 		//○  цикл for и find
 		//○  2 цикла for
 		//Замерьте время каждого способа подсчета и сделайте выводы.
+		std::vector<char> vec_book;
+		char ch;
+		uint16_t count{ 0 };
+
+		std::ifstream file("War and peace.txt");
+
+		if(file.is_open())
+			for (; file;)
+			{
+				file.get(ch);
+				vec_book.push_back(ch);
+			}
+		file.close();
+
+		count = std::count_if(vec_book.begin(), vec_book.end(), [&count](char i) {
+			if (i == 'i' || i == 'I') 
+				return true;
+			return false;
+				
+		});
+
+
+		std::cout << "vec size: " << vec_book.size() << std::endl;
+		std::cout << "count i: " << count << std::endl;
+
 
 
 	}
-
-
-
+	std::cout << "----------------" << std::endl;
 	return 0;
 }
