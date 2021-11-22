@@ -121,7 +121,7 @@ int Lesson2() {
 		//○  цикл for и find
 		//○  2 цикла for
 		//Замерьте время каждого способа подсчета и сделайте выводы.
-
+		Timer time;
 		std::vector<char> vec_book;
 		char ch;
 
@@ -130,7 +130,7 @@ int Lesson2() {
 		std::ifstream file("War and peace.txt");
 
 		if(file.is_open())
-			for (; file;)
+			for (;file;)
 			{
 				file.get(ch);
 				vec_book.push_back(ch);
@@ -139,16 +139,19 @@ int Lesson2() {
 
 		// 1
 		uint16_t count_glas{ 0 };
+		time.start("Test_1");
 		count_glas = std::count_if(vec_book.begin(), vec_book.end(), [](char ch) {
 			if (ch == 'a' || 'e' || 'i' || 'o' || 'u' || 'y' || 'A' || 'E' || 'I' || 'O' || 'U' || 'Y')
 				return true;
 			return false;
 				
 		});
+		time.print();
 		std::cout << "count i: " << count_glas << std::endl;
 		count_glas = 0;
 
 		// 2
+		//time.start("Test_2"); 
 		//auto is_bool = std::find(vec_book.begin(), vec_book.end(), 'a' || 'e' || 'i' || 'o' || 'u' || 'y' || 'A' || 'E' || 'I' || 'O' || 'U' || 'Y');
 		//std::cout << typeid(is_bool).name() << std::endl;
 		
@@ -160,13 +163,29 @@ int Lesson2() {
 		//	return true;
 		//	
 		//	});
+		//time.print(); 
+		//std::cout << "count i: " << count_glas << std::endl;
+		//count_glas = 0;
+
+		//3
+		time.start("Test_3");
+		for(auto& v:vec_book)
+			if(v == ('a' || 'e' || 'i' || 'o' || 'u' || 'y' || 'A' || 'E' || 'I' || 'O' || 'U' || 'Y'))
+				count_glas++;
+		time.print();
 		std::cout << "count i: " << count_glas << std::endl;
 		count_glas = 0;
 
-		//3
-		for(auto& v:vec_book)
-			if(v == 'a' || 'e' || 'i' || 'o' || 'u' || 'y' || 'A' || 'E' || 'I' || 'O' || 'U' || 'Y')
+		//4
+		time.start("Test_4");
+		std::for_each(vec_book.begin(), vec_book.end(), [&count_glas](char ch) {
+			if (ch == ('a' || 'e' || 'i' || 'o' || 'u' || 'y' || 'A' || 'E' || 'I' || 'O' || 'U' || 'Y')) {				
 				count_glas++;
+				return true;
+			}
+			return false;
+		});
+		time.print();
 		std::cout << "count i: " << count_glas << std::endl;
 		count_glas = 0;
 	}
