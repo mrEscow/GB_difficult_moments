@@ -30,12 +30,12 @@
 
 //Реализуйте шаблонную функцию Swap, которая принимает два указателя и обменивает местами значения,
 //на которые указывают эти указатели(нужно обменивать именно сами указатели, переменные должны оставаться в тех же адресах памяти).
-template<class T>
-void Swap(T& lhs, T& rhs) {
-	T tmp;
-	tmp = lhs;
-	lhs = rhs;
-	rhs = tmp;
+template<typename T>
+void swap(T& a, T& b)
+{
+	T tmp(std::move(a));
+	a = std::move(b);
+	b = std::move(tmp);
 }
 
 //Реализуйте шаблонную функцию SortPointers, 
@@ -224,6 +224,7 @@ int Lesson2() {
 		count_glas = 0;
 
 	}
+	std::cout << "----------------" << std::endl;
 	{
 		Timer time;
 
@@ -234,6 +235,10 @@ int Lesson2() {
 		std::string s(size, ' ');
 		file.read(&s[0], size);
 
+		//metod1
+		//metod2
+		//metod3
+		//metod4
 	}
 	std::cout << "----------------" << std::endl;
 	return 0;
