@@ -248,6 +248,8 @@ int Lesson2() {
 			return gls.find(i_String) != std::string::npos ? true : false; 
 			});
 		time.print();
+		std::cout << "count i: " << count_glas << std::endl;
+		count_glas = 0;
 		//metod2
 		//metod3
 		//metod4
