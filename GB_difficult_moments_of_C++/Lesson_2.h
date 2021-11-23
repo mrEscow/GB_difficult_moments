@@ -61,7 +61,9 @@ int Lesson2() {
 		int* ap = &a;
 		int* bp = &b;
 
+		std::cout << ap << std::endl;
 		std::cout << *ap << std::endl;
+		std::cout << bp << std::endl;
 		std::cout << *bp << std::endl;
 
 		Swap(ap, bp);
@@ -69,7 +71,9 @@ int Lesson2() {
 		std::cout << a << std::endl;
 		std::cout << b << std::endl;
 
+		std::cout << ap << std::endl;
 		std::cout << *ap << std::endl;
+		std::cout << bp << std::endl;
 		std::cout << *bp << std::endl;
 	}
 	std::cout << "----------------" << std::endl;
@@ -137,8 +141,9 @@ int Lesson2() {
 		file.close();
 		time.print();
 
-		// 1
-		
+		std::cout << "SIZE CHAR: " << vec_book.size() << std::endl;
+
+		// 1		
 		time.start("Test_1");
 		count_glas = std::count_if(vec_book.begin(), vec_book.end(), [](char ch) {
 			if (ch == 'a' || 'e' || 'i' || 'o' || 'u' || 'y' || 'A' || 'E' || 'I' || 'O' || 'U' || 'Y')
@@ -151,23 +156,6 @@ int Lesson2() {
 		count_glas = 0;
 
 		// 2
-		//time.start("Test_2"); 
-		//auto is_bool = std::find(vec_book.begin(), vec_book.end(), 'a' || 'e' || 'i' || 'o' || 'u' || 'y' || 'A' || 'E' || 'I' || 'O' || 'U' || 'Y');
-		//std::cout << typeid(is_bool).name() << std::endl;
-		
-		//count_glas = std::count_if(vec_book.begin(), vec_book.end(), [&](char i) {			
-		//	auto tmp = std::find(vec_book.begin() + count_glas, vec_book.end(), 'a' || 'e' || 'i' || 'o' || 'u' || 'y' || 'A' || 'E' || 'I' || 'O' || 'U' || 'Y');
-		//	count_glas++;
-		//	if (tmp == vec_book.end())
-		//		return false;
-		//	return true;
-		//	
-		//	});
-		//time.print(); 
-		//std::cout << "count i: " << count_glas << std::endl;
-		//count_glas = 0;
-
-		//3
 		time.start("Test_3");
 		for(auto& v:vec_book)
 			if(v == ('a' || 'e' || 'i' || 'o' || 'u' || 'y' || 'A' || 'E' || 'I' || 'O' || 'U' || 'Y'))
@@ -176,7 +164,7 @@ int Lesson2() {
 		std::cout << "count i: " << count_glas << std::endl;
 		count_glas = 0;
 
-		//4
+		// 3
 		time.start("Test_4");
 		std::for_each(vec_book.begin(), vec_book.end(), [&count_glas](char ch) {
 			if (ch == ('a' || 'e' || 'i' || 'o' || 'u' || 'y' || 'A' || 'E' || 'I' || 'O' || 'U' || 'Y')) {				
@@ -210,7 +198,9 @@ int Lesson2() {
 		file.close();
 		time.print();
 
-		//5
+		std::cout << "SIZE STRS: " << vec_book.size() << std::endl;
+
+		// 4
 		time.start("Test_5");
 		for (auto& v : vec_book)
 			for (int i = 0; i < v.size(); i++)
@@ -221,7 +211,7 @@ int Lesson2() {
 		std::cout << "count i: " << count_glas << std::endl;
 		count_glas = 0;
 
-		//6
+		// 5
 		time.start("Test_6");
 		count_glas = std::count_if(vec_book.begin(), vec_book.end(), [](std::string str) {
 			if (str == "a" || "e" || "i" || "o" || "u" || "y" || "A" || "E" || "I" || "O" || "U" || "Y")
@@ -232,6 +222,18 @@ int Lesson2() {
 		time.print();
 		std::cout << "count i: " << count_glas << std::endl;
 		count_glas = 0;
+
+	}
+	{
+		Timer time;
+
+		std::ifstream file("War and peace.txt");
+		file.seekg(0, std::ios::end);
+		size_t size = file.tellg();
+		file.seekg(0);
+		std::string s(size, ' ');
+		file.read(&s[0], size);
+
 	}
 	std::cout << "----------------" << std::endl;
 	return 0;
