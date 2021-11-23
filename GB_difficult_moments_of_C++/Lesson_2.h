@@ -57,7 +57,9 @@ int Lesson2() {
 
 		std::cout << a << std::endl;
 		std::cout << b << std::endl;
-
+		std::cout << &a << std::endl;
+		std::cout << &b << std::endl;
+		std::cout << "--------" << std::endl;
 		int* ap = &a;
 		int* bp = &b;
 
@@ -65,12 +67,14 @@ int Lesson2() {
 		std::cout << *ap << std::endl;
 		std::cout << bp << std::endl;
 		std::cout << *bp << std::endl;
-
+		std::cout << "--------" << std::endl;
 		Swap(ap, bp);
 
 		std::cout << a << std::endl;
 		std::cout << b << std::endl;
-
+		std::cout << &a << std::endl;
+		std::cout << &b << std::endl;
+		std::cout << "--------" << std::endl;
 		std::cout << ap << std::endl;
 		std::cout << *ap << std::endl;
 		std::cout << bp << std::endl;
@@ -235,7 +239,15 @@ int Lesson2() {
 		std::string s(size, ' ');
 		file.read(&s[0], size);
 
-		//metod1
+		uint32_t count_glas{ 0 };
+		std::string gls = "aeiouyAEIOUY";
+
+		//count_if и find
+		time.start("Count_if - Find");
+		count_glas = std::count_if(s.begin(), s.end(), [&gls](auto i_String) {
+			return gls.find(i_String) != std::string::npos ? true : false; 
+			});
+		time.print();
 		//metod2
 		//metod3
 		//metod4
