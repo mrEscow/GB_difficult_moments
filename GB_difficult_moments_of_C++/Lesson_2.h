@@ -126,9 +126,8 @@ int Lesson2() {
 		char ch;
 		uint16_t count_glas{ 0 };
 		
-
+		time.start("READ FILE ");
 		std::ifstream file("War and peace.txt");
-
 		if(file.is_open())
 			for (;file;)
 			{
@@ -136,6 +135,7 @@ int Lesson2() {
 				vec_book.push_back(ch);
 			}
 		file.close();
+		time.print();
 
 		// 1
 		
@@ -199,8 +199,8 @@ int Lesson2() {
 
 		uint16_t count_glas{ 0 };
 
+		time.start("READ FILE ");
 		std::ifstream file("War and peace.txt");
-
 		if (file.is_open())
 			while(!file.eof())
 			{
@@ -208,6 +208,7 @@ int Lesson2() {
 				vec_book.push_back(line);
 			}
 		file.close();
+		time.print();
 
 		//5
 		time.start("Test_5");
@@ -216,6 +217,18 @@ int Lesson2() {
 				for (int j = 0; j < gls.size(); j++)
 					if (i == j)
 						count_glas++;
+		time.print();
+		std::cout << "count i: " << count_glas << std::endl;
+		count_glas = 0;
+
+		//6
+		time.start("Test_6");
+		count_glas = std::count_if(vec_book.begin(), vec_book.end(), [](std::string str) {
+			if (str == "a" || "e" || "i" || "o" || "u" || "y" || "A" || "E" || "I" || "O" || "U" || "Y")
+				return true;
+			return false;
+
+			});
 		time.print();
 		std::cout << "count i: " << count_glas << std::endl;
 		count_glas = 0;
