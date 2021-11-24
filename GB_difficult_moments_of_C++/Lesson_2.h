@@ -268,7 +268,7 @@ int Lesson2() {
 		count_glas = 0;
 
 		// цикл for и find
-		Timer timer("For-find");
+		time.start("For-find");
 		size_t pos{};
 		for (auto i_s : s)
 		{
@@ -276,12 +276,12 @@ int Lesson2() {
 			if (pos != std::string::npos)
 				count_glas++;
 		}
-		timer.print();
+		time.print();
 		std::cout << "count i: " << count_glas << std::endl;
 		count_glas = 0;
 
 		// 2 цикла for
-		Timer timer("For-for");
+		time.start("For-for");
 		for (auto _vowels : gls)
 		{
 			for (auto _word : s)
@@ -290,7 +290,7 @@ int Lesson2() {
 					count_glas++;
 			}
 		}
-		timer.print();
+		time.print();
 		std::cout << "count i: " << count_glas << std::endl;
 		count_glas = 0;
 	}
