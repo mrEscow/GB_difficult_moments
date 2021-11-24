@@ -46,15 +46,7 @@
 
 */
 
-#include <iostream>
-#include <optional>
-#include <vector>
-#include <fstream>
-#include <istream>
-#include <string>
-#include <sstream>
-#include <iomanip>
-#include <algorithm>
+
 
 //Создайте структуру Person с 3 полями: фамилия, имя, отчество.
 //Поле отчество должно быть опционального типа, т.к.не у всех людей есть отчество.

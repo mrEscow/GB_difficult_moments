@@ -153,6 +153,7 @@
     <Text Include="PhoneBook.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Header.h" />
     <ClInclude Include="Lesson_1.h" />
     <ClInclude Include="Lesson_2.h" />
     <ClInclude Include="Lesson_3.h" />
