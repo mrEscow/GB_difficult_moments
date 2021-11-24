@@ -123,6 +123,8 @@ int Lesson2() {
 	}
 	std::cout << "----------------" << std::endl;
 	{
+		// Вначале хотел реалезовать сам но потом одногрупник подсказал как надо !!!
+		
 		//Подсчитайте количество гласных букв в книге “Война и мир”.Для подсчета используйте 4 способа:
 		//○  count_if и find
 		//○  count_if и цикл for
@@ -231,13 +233,14 @@ int Lesson2() {
 	std::cout << "----------------" << std::endl;
 	{
 		Timer time;
-
+		time.start("READ FILE ");
 		std::ifstream file("War and peace.txt");
 		file.seekg(0, std::ios::end);
 		size_t size = file.tellg();
 		file.seekg(0);
 		std::string s(size, ' ');
 		file.read(&s[0], size);
+		time.print();
 
 		uint32_t count_glas{ 0 };
 		std::string gls = "aeiouyAEIOUY";
