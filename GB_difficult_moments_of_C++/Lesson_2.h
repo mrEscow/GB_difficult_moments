@@ -209,8 +209,8 @@ int Lesson2() {
 		// 4
 		time.start("Test_5");
 		for (auto& v : vec_book)
-			for (int i = 0; i < v.size(); i++)
-				for (int j = 0; j < gls.size(); j++)
+			for (size_t i = 0; i < v.size(); i++)
+				for (size_t j = 0; j < gls.size(); j++)
 					if (i == j)
 						count_glas++;
 		time.print();
@@ -238,7 +238,7 @@ int Lesson2() {
 		time.start("READ FILE ");
 		std::ifstream file("War and peace.txt");
 		file.seekg(0, std::ios::end);
-		size_t size = file.tellg();
+		size_t size = static_cast<size_t>(file.tellg());
 		file.seekg(0);
 		std::string s(size, ' ');
 		file.read(&s[0], size);
