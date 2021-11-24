@@ -232,6 +232,8 @@ int Lesson2() {
 	}
 	std::cout << "----------------" << std::endl;
 	{
+		// отсюда уже идет правильная реализация(спасибо одногрупнику)
+
 		Timer time;
 		time.start("READ FILE ");
 		std::ifstream file("War and peace.txt");
