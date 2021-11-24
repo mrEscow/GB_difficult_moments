@@ -1,26 +1,20 @@
 ﻿#pragma once
 /*
 * 	mr.Escow - Lesson-3
-* * * * * * * * * * * * * * * *
-1.
-	Написать функцию, добавляющую в конец списка вещественных чисел элемент, 
-	значение которого равно среднему арифметическому всех его элементов.
-2.
-	Создать класс, представляющий матрицу. 
-	Реализовать в нем метод, вычисляющий определитель матрицы.
-3.
-	Реализовать собственный класс итератора, 
-	с помощью которого можно будет проитерироваться по диапазону целых чисел в цикле for-range-based.
-*/
+* * * * * * * * * * * * * * * */
 
+//	1.Написать функцию, добавляющую в конец списка вещественных чисел элемент,
+//	значение которого равно среднему арифметическому всех его элементов.
 void push_back_arithmetic_mean(std::list<float> &list) {
-	float arithmetic_mean{ 0 };
+	float arithmetic{ 0 };
 	for (const auto& l : list) {
-		arithmetic_mean += l;
+		arithmetic += l;
 	}
-	list.push_back(arithmetic_mean / static_cast<float>(list.size()));
+	list.push_back(arithmetic / static_cast<float>(list.size()));
 }
 
+//	2.Создать класс, представляющий матрицу.
+//	Реализовать в нем метод, вычисляющий определитель матрицы.
 class Matrix {
 	size_t n;
 	int** matrix;
@@ -120,6 +114,12 @@ public:
 	}
 };
 
+//	3.Реализовать собственный класс итератора,
+//	с помощью которого можно будет проитерироваться по диапазону целых чисел в цикле for - range - based.
+class MyIterator {
+
+};
+
 int Lesson3(){
 
 	//std::list<float> list{ 4.5, 5.3, 7.2, 9.0 };
@@ -131,12 +131,9 @@ int Lesson3(){
 	//}
 	//std::cout << "\n";
 
-	Matrix m1(5);
-
-	m1.Print();
-
-
-	std::cout << "Determinant: " << m1.GetDeterminant() << std::endl;
+	//Matrix m1(5);
+	//m1.Print();
+	//std::cout << "Determinant: " << m1.GetDeterminant() << std::endl;
 
 	return 0;
 }
