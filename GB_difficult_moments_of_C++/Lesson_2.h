@@ -242,12 +242,13 @@ int Lesson2() {
 		file.seekg(0);
 		std::string s(size, ' ');
 		file.read(&s[0], size);
+		file.close();
 		time.print();
 
 		uint32_t count_glas{ 0 };
 		std::string gls = "aeiouyAEIOUY";
 
-		//count_if и find
+		// count_if и find
 		time.start("Count_if - Find");
 		count_glas = std::count_if(s.begin(), s.end(), [&gls](auto i_String) {
 			return gls.find(i_String) != std::string::npos ? true : false; 
@@ -255,7 +256,8 @@ int Lesson2() {
 		time.print();
 		std::cout << "count i: " << count_glas << std::endl;
 		count_glas = 0;
-		//count_if и цикл for
+
+		// count_if и цикл for
 		time.start("Count_if - for");
 		for (const char i_gls : gls)
 		{
@@ -264,8 +266,33 @@ int Lesson2() {
 		time.print();
 		std::cout << "count i: " << count_glas << std::endl;
 		count_glas = 0;
-		//metod3
-		//metod4
+
+		// цикл for и find
+		Timer timer("For-find");
+		size_t pos{};
+		for (auto i_s : s)
+		{
+			pos = gls.find(i_s);
+			if (pos != std::string::npos)
+				count_glas++;
+		}
+		timer.print();
+		std::cout << "count i: " << count_glas << std::endl;
+		count_glas = 0;
+
+		// 2 цикла for
+		Timer timer("For-for");
+		for (auto _vowels : gls)
+		{
+			for (auto _word : s)
+			{
+				if (_vowels == _word)
+					count_glas++;
+			}
+		}
+		timer.print();
+		std::cout << "count i: " << count_glas << std::endl;
+		count_glas = 0;
 	}
 	std::cout << "----------------" << std::endl;
 	return 0;
