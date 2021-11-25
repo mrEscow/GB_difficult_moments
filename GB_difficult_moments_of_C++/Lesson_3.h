@@ -17,38 +17,39 @@ void push_back_arithmetic_mean(std::list<float> &list) {
 //	Реализовать в нем метод, вычисляющий определитель матрицы.
 class Matrix {
 	size_t n{0};
-	int** matrix{0};
-	int determinant{0};
+	double** matrix{0};
+	double determinant{0};
 	void CreateMatrix(size_t n) {
 
-		matrix = new int* [n];
+		matrix = new double* [n];
 		for (size_t i = 0; i < n; ++i)
-			matrix[i] = new int[n];
+			matrix[i] = new double[n];
 
-		srand(time(NULL));
+		srand(static_cast<unsigned int>(time(NULL)));
 
 		for (size_t i = 0; i < n; i++)
 		{
 			for (size_t j = 0; j < n; j++)
 			{
-				matrix[i][j] = rand() % 10 -5;
+				matrix[i][j] = static_cast<double>(rand() % 10) - 5.f;
 			}
 		}
 	}
 
-	int CreateDeterminant(size_t n, int** matrix) {
+	double CreateDeterminant(size_t n, double** matrix) {
 		if (n == 1)
 			return matrix[0][0];
 		else if (n == 2) {
 			return ((matrix[0][0] * matrix[1][1]) - (matrix[0][1] * matrix[1][0]));
 		}
-		else if (n >= 3) {
-			int** new_matrix;
-			new_matrix = new int* [n - 1];
+		//else if (n >= 3) 
+		{
+			double** new_matrix;
+			new_matrix = new double* [n - 1];
 			for (size_t i = 0; i < n - 1; ++i)
-				new_matrix[i] = new int[n - 1];
+				new_matrix[i] = new double[n - 1];
 
-			int det{ 0 };
+			double det{ 0 };
 			int a, b;
 
 			for (size_t j = 0; j < n; j++) {
@@ -99,11 +100,11 @@ public:
 		return n;
 	}
 
-	int** GetMatrix() {
+	double** GetMatrix() {
 		return matrix;
 	}
 
-	int GetDeterminant() {
+	double GetDeterminant() {
 		return determinant;
 	}
 
@@ -136,7 +137,7 @@ public:
 
 int Lesson3(){
 
-	std::list<float> list{ 4.5, 5.3, 7.2, 9.0 };
+	std::list<float> list{ 4.5f, 5.3f, 7.2f, 9.0f };
 
 	push_back_arithmetic_mean(list);
 
