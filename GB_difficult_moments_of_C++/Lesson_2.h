@@ -165,7 +165,7 @@ int Lesson2() {
 		// 2
 		time.start("Test_3");
 		for(auto& v:vec_book)
-			if(v == ('a' || 'e' || 'i' || 'o' || 'u' || 'y' || 'A' || 'E' || 'I' || 'O' || 'U' || 'Y'))
+			if(v == 'a' || 'e' || 'i' || 'o' || 'u' || 'y' || 'A' || 'E' || 'I' || 'O' || 'U' || 'Y')
 				count_glas++;
 		time.print();
 		std::cout << "count i: " << count_glas << std::endl;
@@ -174,7 +174,7 @@ int Lesson2() {
 		// 3
 		time.start("Test_4");
 		std::for_each(vec_book.begin(), vec_book.end(), [&count_glas](char ch) {
-			if (ch == ('a' || 'e' || 'i' || 'o' || 'u' || 'y' || 'A' || 'E' || 'I' || 'O' || 'U' || 'Y')) {				
+			if (ch == 'a' || 'e' || 'i' || 'o' || 'u' || 'y' || 'A' || 'E' || 'I' || 'O' || 'U' || 'Y') {				
 				count_glas++;
 				return true;
 			}
