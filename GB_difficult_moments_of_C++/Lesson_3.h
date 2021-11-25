@@ -96,6 +96,20 @@ public:
 		
 	}
 
+	void SetNewDate() {
+		//srand(static_cast<unsigned int>(time(NULL)));
+
+		for (size_t i = 0; i < n; i++)
+		{
+			for (size_t j = 0; j < n; j++)
+			{
+				matrix[i][j] = static_cast<double>(rand() % 10) - 5.f;
+			}
+		}
+
+		determinant = CreateDeterminant(n, matrix);
+	}
+
 	size_t GetN() {
 		return n;
 	}
@@ -150,6 +164,12 @@ int Lesson3(){
 	std::cout << "-------------------\n";
 
 	Matrix m1(5);
+	m1.Print();
+	std::cout << "Determinant: " << m1.GetDeterminant() << std::endl;
+	m1.SetNewDate();
+	m1.Print();
+	std::cout << "Determinant: " << m1.GetDeterminant() << std::endl;
+	m1.SetNewDate();
 	m1.Print();
 	std::cout << "Determinant: " << m1.GetDeterminant() << std::endl;
 
