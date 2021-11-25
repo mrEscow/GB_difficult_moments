@@ -90,7 +90,7 @@ public:
 		if(n > 0)
 			for (size_t i = 0; i < n; ++i) {
 				for (size_t j = 0; j < n; ++j)
-					std::cout << matrix[i][j] << "  ";
+					std::cout << matrix[i][j] << "\t";
 				std::cout << "\n";
 			}
 		
@@ -136,6 +136,7 @@ public:
 };
 
 int Lesson3(){
+	std::cout << "-------------------\n";
 
 	std::list<float> list{ 4.5f, 5.3f, 7.2f, 9.0f };
 
@@ -146,9 +147,13 @@ int Lesson3(){
 	}
 	std::cout << "\n";
 
+	std::cout << "-------------------\n";
+
 	Matrix m1(5);
 	m1.Print();
 	std::cout << "Determinant: " << m1.GetDeterminant() << std::endl;
+
+	std::cout << "-------------------\n";
 
 	std::vector<int> vec{ 2,4,6,8,10 };
 
@@ -157,8 +162,8 @@ int Lesson3(){
 	for (const auto& It : myIt) {
 		std::cout << It << " ";
 	}
-
 	std::cout << "\n";
 
+	std::cout << "-------------------\n";
 	return 0;
 }
