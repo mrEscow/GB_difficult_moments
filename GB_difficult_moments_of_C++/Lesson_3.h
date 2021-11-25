@@ -16,9 +16,9 @@ void push_back_arithmetic_mean(std::list<float> &list) {
 //	2.Создать класс, представляющий матрицу.
 //	Реализовать в нем метод, вычисляющий определитель матрицы.
 class Matrix {
-	size_t n;
-	int** matrix;
-	int determinant;
+	size_t n{0};
+	int** matrix{0};
+	int determinant{0};
 	void CreateMatrix(size_t n) {
 
 		matrix = new int* [n];
@@ -116,24 +116,48 @@ public:
 
 //	3.Реализовать собственный класс итератора,
 //	с помощью которого можно будет проитерироваться по диапазону целых чисел в цикле for - range - based.
+template<class Type>
 class MyIterator {
+	std::vector<Type> m_vec;
+	std::vector<Type>::const_iterator it;
+public:
+	MyIterator(const std::vector<Type> &vec) {
+		m_vec = vec;
+	};
 
+	std::vector<Type>::const_iterator begin() {
+		return it = m_vec.begin();
+	}
+
+	std::vector<Type>::const_iterator end() {
+		return it = m_vec.end();
+	}
 };
 
 int Lesson3(){
 
-	//std::list<float> list{ 4.5, 5.3, 7.2, 9.0 };
+	std::list<float> list{ 4.5, 5.3, 7.2, 9.0 };
 
-	//push_back_arithmetic_mean(list);
+	push_back_arithmetic_mean(list);
 
-	//for (const auto& l : list) {
-	//	std::cout << l << "  ";
-	//}
-	//std::cout << "\n";
+	for (const auto& l : list) {
+		std::cout << l << "  ";
+	}
+	std::cout << "\n";
 
-	//Matrix m1(5);
-	//m1.Print();
-	//std::cout << "Determinant: " << m1.GetDeterminant() << std::endl;
+	Matrix m1(5);
+	m1.Print();
+	std::cout << "Determinant: " << m1.GetDeterminant() << std::endl;
+
+	std::vector<int> vec{ 2,4,6,8,10 };
+
+	MyIterator myIt(vec);
+
+	for (const auto& It : myIt) {
+		std::cout << It << " ";
+	}
+
+	std::cout << "\n";
 
 	return 0;
 }
