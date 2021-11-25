@@ -282,7 +282,7 @@ public:
 			return std::pair<std::string, PhoneNumber>("", number);
 		if (count == 0)
 			return std::pair<std::string, PhoneNumber>("not found", tmp);
-		if (count > 1)
+		//if (count > 1)
 			return std::pair<std::string, PhoneNumber>("found more than 1", tmp);
 	}
 	//Реализуйте метод ChangePhoneNumber, который принимает человека и новый номер телефона и,
