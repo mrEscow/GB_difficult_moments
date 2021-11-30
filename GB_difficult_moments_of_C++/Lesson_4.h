@@ -14,8 +14,9 @@
 //-------------------------------------------------------------------------------------------
 template<typename CONTAINER,typename TYPE>
 void insert_sorted(CONTAINER &container, const TYPE number) {
-	const auto insert_pos(std::lower_bound(std::begin(container), std::end(container), number));
-	container.insert(insert_pos, number);
+
+		const auto insert_pos(std::lower_bound(std::begin(container), std::end(container), number));
+		container.insert(insert_pos, number);
 }
 //-------------------------------------------------------------------------------------------
 /*
@@ -52,6 +53,41 @@ int Lesson4() {
 	for (auto& v : vec)
 		std::cout << v << "\t";
 	std::cout << "\n";
+
+	//--------------------------------------
+
+	std::vector<float> a(100);
+
+	generate(a.begin(), a.end(), []() {return (rand() % 100/3.f  ); });
+
+	std::vector<int> b(100);
+
+	std::copy(begin(a), end(a), begin(b));
+
+	for (auto& n : a)
+		std::cout << n << "\t";
+	std::cout << "\n";
+
+	for (auto& n : b)
+		std::cout << n << "\t";
+	std::cout << "\n";
+
+	//N - 1 E i = 0  (ai - bi) ^ 2, 
+
+	float delta{ 0 };
+	//for (size_t i = 0; i < 100; ++i) {
+	//	delta += (a[i] - b[i]) * (a[i] - b[i]);
+	//}
+	//std::cout << delta << std::endl;
+
+
+	delta = 0;	
+	auto result = std::inner_product(begin(a), end(a), begin(b), delta, std::plus<>(), [](float a,int b) {
+		return (a - b) * (a - b);
+		});
+	std::cout << result << std::endl;
+
+
 
 	return 0;
 }
