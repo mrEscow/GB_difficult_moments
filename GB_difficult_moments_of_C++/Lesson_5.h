@@ -27,6 +27,14 @@ void PrintUniqueStr(IT begin, IT end) {
 	программа должна вывести пользователю все предложения, отсортировав их по длине.
 */
 //-------------------------------------------------------------------------------------------
+void SortUserData() {
+	std::string UserData;
+	getline(std::cin, UserData);
+	std::istringstream ist(UserData);
+	std::set<std::string> myset;
+	for (std::string word; ist >> word; myset.insert(word));
+	for (auto& str : myset) std::cout << str << std::endl;	
+}
 //-------------------------------------------------------------------------------------------
 int Lesson5() {
 
@@ -37,7 +45,11 @@ int Lesson5() {
 		freqs.push_back(text);
 	
 
-	PrintUniqueStr(freqs.begin(), freqs.end());
+	PrintUniqueStr(freqs.begin(), freqs.begin() + 10);
+
+	std::cout << "---------------------\n";
+
+	SortUserData();
 
 	return 0;
 }
