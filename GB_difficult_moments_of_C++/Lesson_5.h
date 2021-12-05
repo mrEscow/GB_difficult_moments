@@ -29,11 +29,26 @@ void PrintUniqueStr(IT begin, IT end) {
 //-------------------------------------------------------------------------------------------
 void SortUserData() {
 	std::string UserData;
+	std::string newData;
+	std::multimap<size_t, std::string> mymultimap;
+
 	getline(std::cin, UserData);
-	std::istringstream ist(UserData);
-	std::set<std::string> myset;
-	for (std::string word; ist >> word; myset.insert(word));
-	for (auto& str : myset) std::cout << str << std::endl;	
+
+	newData.resize(UserData.size());
+	size_t count{ 0 };
+
+	for (size_t i = 0; i < UserData.size(); ++i)
+	{
+		newData[count++] = UserData[i];
+		if (UserData[i] == '.' || UserData[i] == '!') {
+			newData.resize(count);
+			mymultimap.insert(std::pair<const size_t, std::string>(++count, newData));
+			newData.clear();
+			newData.resize(UserData.size());
+			count = 0;
+		}
+	}
+	for (auto& mp : mymultimap) std::cout << mp.first << " : " << mp .second << std::endl;
 }
 //-------------------------------------------------------------------------------------------
 int Lesson5() {
@@ -45,7 +60,7 @@ int Lesson5() {
 		freqs.push_back(text);
 	
 
-	PrintUniqueStr(freqs.begin(), freqs.begin() + 10);
+	PrintUniqueStr(freqs.begin(), freqs.begin() + 20);
 
 	std::cout << "---------------------\n";
 
