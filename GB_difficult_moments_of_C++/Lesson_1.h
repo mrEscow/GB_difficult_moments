@@ -1,8 +1,9 @@
 ﻿#pragma once
 /*
 *	  mr.Escow - Lesson-1
-* * * * * * * * * * * * * * * *
-
+* * * * * * * * * * * * * * * */
+#include "Header.h"
+/*
 1.
 	Создайте структуру Person с 3 полями: фамилия, имя, отчество.
 	Поле отчество должно быть опционального типа, т.к. не у всех людей есть отчество.
@@ -46,15 +47,7 @@
 
 */
 
-#include <iostream>
-#include <optional>
-#include <vector>
-#include <fstream>
-#include <istream>
-#include <string>
-#include <sstream>
-#include <iomanip>
-#include <algorithm>
+
 
 //Создайте структуру Person с 3 полями: фамилия, имя, отчество.
 //Поле отчество должно быть опционального типа, т.к.не у всех людей есть отчество.
@@ -282,7 +275,7 @@ public:
 			return std::pair<std::string, PhoneNumber>("", number);
 		if (count == 0)
 			return std::pair<std::string, PhoneNumber>("not found", tmp);
-		if (count > 1)
+		//if (count > 1)
 			return std::pair<std::string, PhoneNumber>("found more than 1", tmp);
 	}
 	//Реализуйте метод ChangePhoneNumber, который принимает человека и новый номер телефона и,
