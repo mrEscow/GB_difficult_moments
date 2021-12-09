@@ -80,7 +80,7 @@ bool IsPrime(const uint64_t& val)
 		//test = false;
 		return false;
 
-	bound = sqrt(static_cast<double>(val));
+	bound = static_cast<uint64_t>(sqrt(static_cast<double>(val)));
 
 	i1 = 31; i2 = 37; i3 = 41; i4 = 43; i5 = 47; i6 = 49; i7 = 53; i8 = 59;
 
@@ -105,11 +105,11 @@ bool IsPrime(const uint64_t& val)
 //Функцию, возвращающая i-ое простое число
 uint64_t GetPrimeNumber(uint64_t& num)
 {
-	register uint16_t ProgressCount{ 0 };
+	uint16_t ProgressCount{ 0 };
 
-	register uint32_t Index;
+	uint32_t Index;
 
-	register uint64_t PrimeNumber{ 0 };
+	uint64_t PrimeNumber{ 0 };
 	
 	for (Index = 0; Index <= num; )
 	{
