@@ -12,6 +12,7 @@
 #include "Lesson_4.h"
 #include "Lesson_5.h"
 #include "Lesson_6.h"
+#include "Lesson_7.h"
 
 int main() {
 
@@ -25,6 +26,9 @@ int main() {
 
 	//Lesson5();
 	
-	Lesson6();
+	//Lesson6();
+
+	Lesson7();
+
 	return 0;
 }
