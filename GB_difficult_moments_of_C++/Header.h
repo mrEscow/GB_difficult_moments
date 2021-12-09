@@ -1,7 +1,6 @@
 #pragma once
 
 #include <iostream>
-#include <optional>
 
 #include <fstream>
 #include <istream>
@@ -10,6 +9,7 @@
 #include <iomanip>
 
 #include <algorithm>
+#include <optional>
 #include <vector>
 #include <list>
 
@@ -21,3 +21,6 @@
 #include <mutex>
 #include <chrono>
 #include <thread>
+
+#include <iterator>
+#include <future>
