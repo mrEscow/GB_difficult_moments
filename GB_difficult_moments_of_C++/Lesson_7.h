@@ -272,9 +272,9 @@ int Lesson7() {
 	{
 		double Number = 1.234567890;
 		my::cout << Number << my::endl;
-		SD::Serialize("data2.bin", Number);
+		SD::Serialize("data3.bin", Number);
 		double Result;
-		SD::Deserialize("data2.bin", Result);
+		SD::Deserialize("data3.bin", Result);
 		my::cout << Result << my::endl;
 	}
 
