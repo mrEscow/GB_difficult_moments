@@ -190,25 +190,25 @@ namespace SD {
 	using std::ifstream;
 
 	void Serialize(Str Path, Str Data) {
-		ofstream out(Path, ios::binary);
-		out.write(Data.c_str(), Data.size());
+		ofstream Out(Path, ios::binary);
+		Out.write(Data.c_str(), Data.size());
 	}
 
 	void Deserialize(Str Path, Str& Result) {
-		ifstream in(Path, ios::binary);
+		ifstream In(Path, ios::binary);
 		Result.resize(1024);
-		in.read(Result.data(), Result.size());
-		Result.resize(in.gcount());
+		In.read(Result.data(), Result.size());
+		Result.resize(In.gcount());
 	}
 
 	void Serialize(Str Path, Int32 Data) {
-		ofstream out(Path, ios::binary);
-		out.write(reinterpret_cast<char*>(&Data), sizeof(Data));
+		ofstream Out(Path, ios::binary);
+		Out.write(reinterpret_cast<char*>(&Data), sizeof(Data));
 	}
 
 	void Deserialize(Str Path, Int32& Result) {
-		ifstream in(Path, ios::binary);
-		in.read(reinterpret_cast<char*>(&Result), sizeof(Result));
+		ifstream In(Path, ios::binary);
+		In.read(reinterpret_cast<char*>(&Result), sizeof(Result));
 	}
 }
 //-------------------------------------------------------------------------------------------
