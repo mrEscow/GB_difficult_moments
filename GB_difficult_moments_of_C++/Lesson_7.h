@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 /*
 * 	mr.Escow - Lesson-7
 * * * * * * * * * * * * * * * */
@@ -93,7 +93,7 @@ namespace ALG {
 	using std::inner_product;
 
 	using std::sort;
-	//using std::раrtial_sort;
+	//using std::СЂР°rtial_sort;
 	using std::stable_sort;
 
 	using std::nth_element;
@@ -113,7 +113,7 @@ namespace ALG {
 	using std::next_permutation;
 }
 
-//	Адаптеры итераторов
+//	РђРґР°РїС‚РµСЂС‹ РёС‚РµСЂР°С‚РѕСЂРѕРІ
 namespace ADPIT{
 
 	using std::ostream_iterator;
