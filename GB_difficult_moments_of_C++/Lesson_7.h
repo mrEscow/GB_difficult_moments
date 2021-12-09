@@ -3,8 +3,6 @@
 * 	mr.Escow - Lesson-7
 * * * * * * * * * * * * * * * */
 #include "Header.h"
-
-
 //-------------------------------------------------------------------------------------------
 //	std
 namespace STD{
@@ -80,8 +78,6 @@ namespace ALG {
 
 	using std::rotate;
 
-	using std::rotate;
-
 	using std::swap_ranges;
 
 	using std::transform;
@@ -127,6 +123,7 @@ namespace ADPIT{
 	using std::back_inserter;
 
 }
+// paralells
 namespace PRL{
 
 	namespace THIS{
@@ -170,75 +167,97 @@ namespace PRL{
 	}
 }
 //-------------------------------------------------------------------------------------------
-namespace STR {
-	typedef std::string str;
-}
 namespace my {
-	using namespace STR;
+
+	using std::cout;
+	using std::endl;
+
+	typedef std::string Str;
+
+	typedef int32_t Int;
+	typedef int32_t Int32;
+
+	typedef uint32_t Uint;
+	typedef uint32_t Uint32;
+}
+//-------------------------------------------------------------------------------------------
+namespace SD {
+
+	using namespace my;
 
 	using std::ios;
 	using std::ofstream;
 	using std::ifstream;
 
-	void serialize(str path, str data) {
-		ofstream out(path, ios::binary);
-		out.write(data.c_str(), data.size());
+	void Serialize(Str Path, Str Data) {
+		ofstream out(Path, ios::binary);
+		out.write(Data.c_str(), Data.size());
 	}
 
-	void deserialize(str path, str& result) {
-		ifstream in(path, ios::binary);
-		result.resize(1024);
-		in.read(result.data(), result.size());
-		result.resize(in.gcount());
+	void Deserialize(Str Path, Str& Result) {
+		ifstream in(Path, ios::binary);
+		Result.resize(1024);
+		in.read(Result.data(), Result.size());
+		Result.resize(in.gcount());
 	}
 
-	void serialize(str path, int data) {
-		ofstream out(path, ios::binary);
-		out.write(reinterpret_cast<char*>(&data), sizeof(data));
+	void Serialize(Str Path, Int32 Data) {
+		ofstream out(Path, ios::binary);
+		out.write(reinterpret_cast<char*>(&Data), sizeof(Data));
 	}
 
-	void deserialize(str path, int& result) {
-		ifstream in(path, ios::binary);
-		in.read(reinterpret_cast<char*>(&result), sizeof(result));
+	void Deserialize(Str Path, Int32& Result) {
+		ifstream in(Path, ios::binary);
+		in.read(reinterpret_cast<char*>(&Result), sizeof(Result));
 	}
 }
 //-------------------------------------------------------------------------------------------
 namespace {
-	int i = 100;
+	my::Int32 i = 100;
 	void f() {
-		STD::cout << i << STD::endl;
+		my::cout << i << my::endl;
 	}
 }
 //-------------------------------------------------------------------------------------------
 int Lesson7() {
+
 	{
-		my::str String{"HELLO WORLD!"};
+		my::Str String{"HELLO WORLD!"};
 	}
+
 	{
-		STD::cout << PRL::THIS::get_id() << STD::endl;
+		my::cout << PRL::THIS::get_id() << my::endl;
 		PRL::thread Thread; 
 	}
-	{
-		int i = 10;
 
-		STD::cout << i << STD::endl;
+	{
+		my::Int32 i = 10;
+
+		my::cout << i << my::endl;
 		f();
-		STD::cout << i << STD::endl;
+		my::cout << i << my::endl;
 		f();
 	}
 
 	{
-		STD::serialize("data1.bin", "Hello world!");
-		STD::string result;
-		STD::deserialize("data1.bin", result);
-		STD::cout << result << STD::endl;
+		SD::Serialize("data1.bin", "Hello world!");
+		my::Str Result;
+		SD::Deserialize("data1.bin", Result);
+		my::cout << Result << my::endl;
+	}
+	
+	{
+		SD::Serialize("data2.bin", 802'464'397);
+		my::Int Result;
+		SD::Deserialize("data2.bin", Result);
+		my::cout << Result << my::endl;
 	}
 
 	{
-		STD::serialize("data2.bin", 802'464'397);
-		int result;
-		STD::deserialize("data2.bin", result);
-		STD::cout << result << STD::endl;
+		using namespace my;
+
+		Str NewString;
+
 	}
 
 	return 0;
