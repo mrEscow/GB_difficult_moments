@@ -179,6 +179,12 @@ namespace my {
 
 	typedef uint32_t Uint;
 	typedef uint32_t Uint32;
+
+	typedef int64_t Lint;
+	typedef int64_t Int64;
+
+	typedef uint64_t Luint;
+	typedef uint64_t Uint64;
 }
 //-------------------------------------------------------------------------------------------
 namespace SD {
