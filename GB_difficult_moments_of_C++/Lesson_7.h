@@ -216,6 +216,16 @@ namespace SD {
 		ifstream In(Path, ios::binary);
 		In.read(reinterpret_cast<char*>(&Result), sizeof(Result));
 	}
+
+	void Serialize(Str Path, double Data) {
+		ofstream Out(Path, ios::binary);
+		Out.write(reinterpret_cast<char*>(&Data), sizeof(Data));
+	}
+
+	void Deserialize(Str Path, double& Result) {
+		ifstream In(Path, ios::binary);
+		In.read(reinterpret_cast<char*>(&Result), sizeof(Result));
+	}
 }
 //-------------------------------------------------------------------------------------------
 namespace {
@@ -255,6 +265,15 @@ int Lesson7() {
 	{
 		SD::Serialize("data2.bin", 802'464'397);
 		my::Int Result;
+		SD::Deserialize("data2.bin", Result);
+		my::cout << Result << my::endl;
+	}
+
+	{
+		double Number = 1.234567890;
+		my::cout << Number << my::endl;
+		SD::Serialize("data2.bin", Number);
+		double Result;
 		SD::Deserialize("data2.bin", Result);
 		my::cout << Result << my::endl;
 	}
