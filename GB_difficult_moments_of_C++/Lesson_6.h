@@ -141,6 +141,7 @@ uint64_t GetPrimeNumber(uint64_t& num)
 		num = PrimeNumber;
 	return PrimeNumber;
 }
+
 //-------------------------------------------------------------------------------------------
 /*
 	3.Промоделировать следующую ситуацию. 
@@ -152,7 +153,9 @@ uint64_t GetPrimeNumber(uint64_t& num)
 */
 //-------------------------------------------------------------------------------------------
 
+//Глобальный вектор вещей
 std::vector<int> G_VECTOR_SACHEN;
+
 //Функция добавляющая случайное число в вектор с периодичностью 1 раз в секунду
 void PUSH_RAND_INT(const bool& stop)
 {
@@ -163,7 +166,7 @@ void PUSH_RAND_INT(const bool& stop)
 		uint32_t RandUint = rand() % 1'0000'000;
 		G_VECTOR_SACHEN.push_back(RandUint);
 
-		std::cout << "PUSH:  " << RandUint << "\n";
+		Pcout{} << "PUSH:  " << RandUint << "\n";
 	}
 
 }
@@ -178,7 +181,7 @@ void POP_MAX_INT(const bool& stop)
 		{
 			std::sort(G_VECTOR_SACHEN.begin(), G_VECTOR_SACHEN.end());
 
-			std::cout << "POP:  " << G_VECTOR_SACHEN.back() << "\n";
+			Pcout{} << "POP:  " << G_VECTOR_SACHEN.back() << "\n";
 
 			G_VECTOR_SACHEN.pop_back();
 		}
