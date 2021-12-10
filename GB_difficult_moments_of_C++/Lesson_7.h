@@ -172,18 +172,20 @@ namespace my {
 		namespace ALG {
 
 			using std::async;
+
+			namespace launch {
+
+				using std::launch::async;
+				using std::launch::deferred;
+			}
+
+
 			using std::execution::par;
 
 			using std::execution::parallel_policy;
 			using std::execution::parallel_policy;
 			using std::execution::parallel_unsequenced_policy;
 
-		}
-
-		namespace AL {
-
-			using std::launch::async;
-			using std::launch::deferred;
 		}
 	}
 }
@@ -248,7 +250,7 @@ int Lesson7() {
 	}
 
 	{
-		my::Int32 i = 10;
+		my::Int32 i = -2'000'000'000;
 
 		my::cout << i << my::endl;
 		f();
@@ -268,27 +270,37 @@ int Lesson7() {
 	}
 
 	{
-		SD::Serialize("data1.bin", "Hello world!");
-		my::Str Result;
-		SD::Deserialize("data1.bin", Result);
-		my::cout << Result << my::endl;
-	}
-	
-	{
-		SD::Serialize("data2.bin", 802'464'397);
-		my::Int Result;
-		SD::Deserialize("data2.bin", Result);
-		my::cout << Result << my::endl;
+		using namespace SD;
+		
+		Str String{ "HELLO WORLD!" };
+
+		Str Path1{ "data1.bin" };
+		{
+			Serialize(Path1, String);
+			Str Result;
+			Deserialize(Path1, Result);
+			cout << Result << endl;
+		}
+
+		Str Path2{ "data2.bin" };
+		{
+			Serialize(Path2, 802'464'397);
+			Int Result;
+			Deserialize(Path2, Result);
+			cout << Result << endl;
+		}
+
+		Str Path3{ "data3.bin" };
+		{
+			double Number = 1.234567890;
+			cout << Number << endl;
+			Serialize(Path3, Number);
+			double Result;
+			Deserialize(Path3, Result);
+			cout << Result << endl;
+		}
 	}
 
-	{
-		double Number = 1.234567890;
-		my::cout << Number << my::endl;
-		SD::Serialize("data3.bin", Number);
-		double Result;
-		SD::Deserialize("data3.bin", Result);
-		my::cout << Result << my::endl;
-	}
 
 	{
 		using namespace my;
