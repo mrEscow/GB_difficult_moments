@@ -243,8 +243,8 @@ int Lesson7() {
 	}
 
 	{
-		my::cout << PRL::THIS::get_id() << my::endl;
-		PRL::thread Thread; 
+		my::cout << my::PRL::THIS::get_id() << my::endl;
+		my::PRL::thread Thread; 
 	}
 
 	{
@@ -293,7 +293,7 @@ int Lesson7() {
 	{
 		using namespace my;
 
-		Str NewString;
+		Str NewString{"GOODBYE WORLD!"};
 
 	}
 
