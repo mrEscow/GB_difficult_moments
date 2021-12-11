@@ -148,12 +148,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="car.pb.cc" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="PhoneBook.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="car.pb.h" />
     <ClInclude Include="Header.h" />
     <ClInclude Include="Lesson_1.h" />
     <ClInclude Include="Lesson_2.h" />
