@@ -346,7 +346,7 @@ int Lesson7() {
 			// Удалить старый репозиторий
 			conan remote remove conan - center
 
-			// Установить нужный репозиторий
+			// Установить нужный репозиторий и установить ему главный приоритет
 			conan remote add conancenter https ://center.conan.io --insert 0
 
 			// Посмотреть список репозиториев
