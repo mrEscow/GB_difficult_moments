@@ -1,0 +1,41 @@
+[settings]
+    arch=x86_64
+    build_type=Debug
+    compiler=Visual Studio
+    compiler.runtime=MDd
+    compiler.version=16
+    os=Windows
+
+[requires]
+    protobuf/3.Y.Z
+
+[options]
+
+
+[full_settings]
+    arch=x86_64
+    arch_build=x86_64
+    build_type=Debug
+    compiler=Visual Studio
+    compiler.runtime=MDd
+    compiler.version=16
+    os=Windows
+    os_build=Windows
+
+[full_requires]
+    protobuf/3.17.1:390b80578bf6c7353bb1fcd9b8fe1b4987dc6ea1
+    zlib/1.2.11:d057732059ea44a47760900cb5e4855d2bea8714
+
+[full_options]
+    protobuf:lite=False
+    protobuf:shared=False
+    protobuf:with_rtti=True
+    protobuf:with_zlib=True
+    zlib:minizip=deprecated
+    zlib:shared=False
+
+[recipe_hash]
+
+
+[env]
+
