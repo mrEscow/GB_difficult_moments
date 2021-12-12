@@ -150,6 +150,7 @@
   <ItemGroup>
     <ClCompile Include="car.pb.cc" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="proto\FullName.pb.cc" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="PhoneBook.txt" />
@@ -164,6 +165,7 @@
     <ClInclude Include="Lesson_5.h" />
     <ClInclude Include="Lesson_6.h" />
     <ClInclude Include="Lesson_7.h" />
+    <ClInclude Include="proto\FullName.pb.h" />
     <ClInclude Include="Timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

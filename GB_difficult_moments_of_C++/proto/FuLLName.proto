@@ -1,0 +1,11 @@
+syntax="proto3";
+
+// namespace Proto
+package Proto;
+
+// class FuLLName
+message FuLLName{
+    string Name = 1;
+    string Surname= 2;
+    optional string Patronymic = 3;
+}

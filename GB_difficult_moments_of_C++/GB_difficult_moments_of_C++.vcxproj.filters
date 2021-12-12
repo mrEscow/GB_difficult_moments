@@ -13,48 +13,69 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Исходные файлы\Proto">
+      <UniqueIdentifier>{d532d769-2306-4450-a3d3-58d761717ef8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Proto">
+      <UniqueIdentifier>{5dc1f231-7744-4120-abe6-1c98fb35f86a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core">
+      <UniqueIdentifier>{e234c213-b48d-4739-9e81-7184c8d016a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Lessons">
+      <UniqueIdentifier>{99abd76a-40a9-40fb-ad86-d95c5f7491b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Core">
+      <UniqueIdentifier>{96b8d275-2998-4dfc-8e79-5de0ef64b43a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="car.pb.cc">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Proto</Filter>
+    </ClCompile>
+    <ClCompile Include="proto\FullName.pb.cc">
+      <Filter>Исходные файлы\Proto</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Исходные файлы\Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="PhoneBook.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="car.pb.h">
+      <Filter>Файлы заголовков\Proto</Filter>
+    </ClInclude>
+    <ClInclude Include="proto\FullName.pb.h">
+      <Filter>Файлы заголовков\Proto</Filter>
+    </ClInclude>
     <ClInclude Include="Lesson_1.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Lessons</Filter>
     </ClInclude>
     <ClInclude Include="Lesson_2.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Timer.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Lessons</Filter>
     </ClInclude>
     <ClInclude Include="Lesson_3.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Header.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Lessons</Filter>
     </ClInclude>
     <ClInclude Include="Lesson_4.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Lessons</Filter>
     </ClInclude>
     <ClInclude Include="Lesson_5.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Lessons</Filter>
     </ClInclude>
     <ClInclude Include="Lesson_6.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Lessons</Filter>
     </ClInclude>
     <ClInclude Include="Lesson_7.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Lessons</Filter>
     </ClInclude>
-    <ClInclude Include="car.pb.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="Header.h">
+      <Filter>Файлы заголовков\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Файлы заголовков\Core</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

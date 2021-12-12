@@ -249,6 +249,8 @@ namespace {
 //		b.Student с полями полное имя, массив оценок, средний балл.
 //		c.StudentsGroup с полем массив студентов.
 //-------------------------------------------------------------------------------------------
+#include "proto/FullName.pb.h"
+using namespace Proto;
 //-------------------------------------------------------------------------------------------
 //	3.Создать класс StudentsGroup, который реализует интерфейсы :
 //-------------------------------------------------------------------------------------------
@@ -258,8 +260,8 @@ class IRepository {
 };
 
 class IMethods {
-	virtual double GetAverageScore(const FullName& name) = 0;
-	virtual std::string GetAllInfo(const FullName& name) = 0;
+	virtual double GetAverageScore(const FuLLName& name) = 0;
+	virtual std::string GetAllInfo(const FuLLName& name) = 0;
 	virtual std::string GetAllInfo() = 0;
 };
 //-------------------------------------------------------------------------------------------
@@ -330,15 +332,15 @@ int Lesson7() {
 		}
 	}
 
-	using namespace my;
+	using namespace my;  // STD, STL, ALG, PRL, ADPIT, cout, endl.
 
 	{
-		Str NewString{"GOODBYE WORLD!"};
+		Str NewString{"HELLO HDD and SSD!"};
 	}
 
 	{
 		/*
-			Conan для винды установщик старый и после установки нужно поменять дирикторию запросов
+			Conan после установки нужно поменять дирикторию запросов
 
 			// Посмотреть список репозиториев
 			conan remote list
