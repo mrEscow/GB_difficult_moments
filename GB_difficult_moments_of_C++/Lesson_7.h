@@ -40,12 +40,13 @@ class IMethods {
 
 //-----------------------------------------------------------------------------------
 class StudentsGroup : private IRepository, private IMethods{
+
+	STL::map < Uint32, Students::StudentGroup> map_SG;
+
 	Str PathToFios{ "bin//fios//" };
 	Str PathToStudents{ "bin//students//" };
 	Str PathToGroups{ "bin//groups//" };
-	my::STL::vector<Students::Student> m_Students;
-	my::STL::map < Uint32, Students::StudentGroup> map_SG;
-	//Students::StudentGroup SG;
+
 	Uint32 CountFileInDir(Str Path);
 
 public:
