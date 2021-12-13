@@ -77,7 +77,9 @@ std::string StudentsGroup::GetAllInfo(const Students::FuLLName& name)
 		for (auto St : val.studs()) {
 			if (ALG::tie(St.fio().name(), St.fio().surname(), St.fio().surname()) ==
 				ALG::tie(name.name(), name.surname(), name.surname())) {
-				return "\n-----------------------\nFIO:\nName:\t\t" + 
+
+				return	"\n-----------------------\nGroup#" + STD::to_string(key) +
+						"\n-----------------------\nFIO:\nName:\t\t" + 
 						St.fio().name() + "\n" +
 						"Surname:\t" + St.fio().surname() + "\n" +
 						"Patronymic:\t" + St.fio().patronymic() + "\n" +
