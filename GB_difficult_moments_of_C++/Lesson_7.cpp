@@ -83,7 +83,7 @@ std::string StudentsGroup::GetAllInfo(const Students::FuLLName& name)
 						St.fio().name() + "\n" +
 						"Surname:\t" + St.fio().surname() + "\n" +
 						"Patronymic:\t" + St.fio().patronymic() + "\n" +
-						"Count score:\t" + STD::to_string(St.evaluations().size()) + "\n" +
+						"Scores:\nCount score:\t" + STD::to_string(St.evaluations().size()) + "\n" +
 						"Average score:\t" + STD::to_string(St.averagescore()) +
 						"\n-----------------------\n";
 			}
@@ -103,7 +103,7 @@ std::string StudentsGroup::GetAllInfo()
 				St.fio().name() + "\n" +
 				"Surname:\t" + St.fio().surname() + "\n" +
 				"Patronymic:\t" + St.fio().patronymic() + "\n" +
-				"Count score:\t" + STD::to_string(St.evaluations().size()) + "\n" +
+				"Scores:\nCount score:\t" + STD::to_string(St.evaluations().size()) + "\n" +
 				"Average score:\t" + STD::to_string(St.averagescore()) +
 				"\n-----------------------\n";
 			
