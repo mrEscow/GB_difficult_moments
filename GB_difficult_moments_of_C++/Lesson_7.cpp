@@ -9,31 +9,23 @@ my::STL::vector<Students::StudentGroup> g_Grups;
 Uint32 StudentsGroup::CountFileInDir(Str Path) {
 
 	Path += "*bin";
-
     STD::wstring wide_string = STD::wstring(Path.begin(), Path.end());
     const wchar_t* filePath = wide_string.c_str();
-
 	STD::wcout << filePath << endl;
-
     WIN32_FIND_DATAW wfd;
     HANDLE hFind = FindFirstFileW(filePath, &wfd);
-
-    //setlocale(LC_ALL, "");
 
     Uint32 CountFile{ 0 };
     if (INVALID_HANDLE_VALUE != hFind)
     {
-
         do
         {
             CountFile++;
         } while (NULL != FindNextFileW(hFind, &wfd));
         FindClose(hFind);
     }
-
     return CountFile;
 }
-
 
 StudentsGroup::StudentsGroup()
 {

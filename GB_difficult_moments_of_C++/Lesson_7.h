@@ -62,5 +62,5 @@ public:
 	virtual std::string GetAllInfo();
 };
 
-
+// GO Lesson_7.cpp
 int Lesson7();
