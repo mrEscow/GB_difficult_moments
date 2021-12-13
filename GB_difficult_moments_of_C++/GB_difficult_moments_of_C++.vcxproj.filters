@@ -89,5 +89,8 @@
     <ClInclude Include="MyNameSpace.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="Lesson_8.h">
+      <Filter>Файлы заголовков\Lessons</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

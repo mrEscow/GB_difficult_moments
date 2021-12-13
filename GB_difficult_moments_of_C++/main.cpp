@@ -15,6 +15,7 @@
 #include "Lesson_5.h"
 #include "Lesson_6.h"
 #include "Lesson_7.h"
+#include "Lesson_8.h"
 
 int main() {
 
@@ -30,7 +31,9 @@ int main() {
 	
 	//Lesson6();
 
-	Lesson7();
+	//Lesson7();
+
+	//Lesson8();
 
 	return 0;
 }
