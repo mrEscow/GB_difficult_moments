@@ -39,6 +39,12 @@
     <ClCompile Include="main.cpp">
       <Filter>Исходные файлы\Core</Filter>
     </ClCompile>
+    <ClCompile Include="proto\Students.pb.cc">
+      <Filter>Исходные файлы\Proto</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson_7.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="PhoneBook.txt" />
@@ -76,6 +82,12 @@
     </ClInclude>
     <ClInclude Include="Timer.h">
       <Filter>Файлы заголовков\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="proto\Students.pb.h">
+      <Filter>Файлы заголовков\Proto</Filter>
+    </ClInclude>
+    <ClInclude Include="MyNameSpace.h">
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

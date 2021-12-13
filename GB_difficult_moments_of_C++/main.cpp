@@ -2,6 +2,8 @@
 *	  mr.Escow
 * * * * * * * * * */
 
+#pragma once
+
 #include "Timer.h"
 
 #include "Header.h"

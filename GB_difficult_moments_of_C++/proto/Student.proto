@@ -2,6 +2,6 @@ syntax="proto3";
 
 message Student{
     FullName FIO = 1;
-    string model = 2;
-    int32 year = 3;
+    repeated int32  Evaluations= 2;
+    int32 AverageScore = 3;
 }

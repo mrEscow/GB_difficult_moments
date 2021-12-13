@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+// namespace 
+package Students;
+
+// class A
+message FuLLName{
+    string Name  =  1;
+    string Surname =  2;
+    optional string Patronymic  =  3;
+}
+
+// class B
+message Student{
+    FuLLName FIO  =  1;
+    repeated int32  Evaluations =  2;
+    double AverageScore  =  3;
+}
+
+// class C
+message StudentGroup{
+    repeated Student Studs  =  1  ;
+}
+
