@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 /*
 * 	mr.Escow - Lesson-7
 * * * * * * * * * * * * * * * */
