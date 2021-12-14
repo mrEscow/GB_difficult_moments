@@ -37,8 +37,6 @@ class IMethods {
 	virtual std::string GetAllInfo() = 0;
 };
 //-------------------------------------------------------------------------------------------
-
-//-----------------------------------------------------------------------------------
 class StudentsGroup : private IRepository, private IMethods{
 
 	STL::map < Uint32, Students::StudentGroup> map_SG;
@@ -62,6 +60,6 @@ public:
 
 	virtual std::string GetAllInfo();
 };
-
+//-------------------------------------------------------------------------------------------
 // GO Lesson_7.cpp
 int Lesson7();
