@@ -153,7 +153,7 @@ namespace SD {
 	}
 }
 //-------------------------------------------------------------------------------------------
-void Main();
+void CreatingData();
 int Lesson7() {
 
 	{
@@ -233,7 +233,7 @@ int Lesson7() {
 	}
 
 	{
-		Main();
+		CreatingData();
 		Students::FuLLName Fio;
 
 		Fio.set_name("Hello0");
@@ -249,6 +249,7 @@ int Lesson7() {
 		SGroup.Open();
 
 		SGroup.Save();
+
 		cout << "----------------------" << endl;
 		cout << "AverageScore: " << SGroup.GetAverageScore(Fio) << endl;
 		cout << "----------------------" << endl;
@@ -261,7 +262,7 @@ int Lesson7() {
 }
 //-------------------------------------------------------------------------------------------
 
-void Main()
+void CreatingData()
 {
 	using namespace my;
 
