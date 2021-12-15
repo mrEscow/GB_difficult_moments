@@ -33,7 +33,7 @@ int main() {
 
 	//Lesson7();
 
-	//Lesson8();
+	Lesson8();
 
 	return 0;
 }
