@@ -1,25 +1,32 @@
 [includedirs]
-C:/.conan/0f4636/1/include
-C:/Users/Escow/.conan/data/zlib/1.2.11/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/include
+C:/.conan/873aab/1/include
+C:/Users/Escow/.conan/data/gtest/cci.20210126/_/_/package/5ad274d83035c78ba2b205e6cf4f1b317aee8e05/include
+C:/Users/Escow/.conan/data/zlib/1.2.11/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/include
 
 [libdirs]
-C:/.conan/0f4636/1/lib
-C:/Users/Escow/.conan/data/zlib/1.2.11/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/lib
+C:/.conan/873aab/1/lib
+C:/Users/Escow/.conan/data/gtest/cci.20210126/_/_/package/5ad274d83035c78ba2b205e6cf4f1b317aee8e05/lib
+C:/Users/Escow/.conan/data/zlib/1.2.11/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/lib
 
 [bindirs]
-C:/.conan/0f4636/1/bin
+C:/.conan/873aab/1/bin
 
 [resdirs]
 
 
 [builddirs]
-C:/.conan/0f4636/1/
-C:/.conan/0f4636/1/lib/cmake/protobuf
-C:/Users/Escow/.conan/data/zlib/1.2.11/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/
+C:/.conan/873aab/1/
+C:/.conan/873aab/1/lib/cmake/protobuf
+C:/Users/Escow/.conan/data/gtest/cci.20210126/_/_/package/5ad274d83035c78ba2b205e6cf4f1b317aee8e05/
+C:/Users/Escow/.conan/data/zlib/1.2.11/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/
 
 [libs]
-libprotocd
-libprotobufd
+libprotoc
+libprotobuf
+gtest_main
+gmock_main
+gmock
+gtest
 zlib
 
 [system_libs]
@@ -54,24 +61,24 @@ zlib
 
 
 [includedirs_protobuf]
-C:/.conan/0f4636/1/include
+C:/.conan/873aab/1/include
 
 [libdirs_protobuf]
-C:/.conan/0f4636/1/lib
+C:/.conan/873aab/1/lib
 
 [bindirs_protobuf]
-C:/.conan/0f4636/1/bin
+C:/.conan/873aab/1/bin
 
 [resdirs_protobuf]
 
 
 [builddirs_protobuf]
-C:/.conan/0f4636/1/
-C:/.conan/0f4636/1/lib/cmake/protobuf
+C:/.conan/873aab/1/
+C:/.conan/873aab/1/lib/cmake/protobuf
 
 [libs_protobuf]
-libprotocd
-libprotobufd
+libprotoc
+libprotobuf
 
 [system_libs_protobuf]
 
@@ -104,7 +111,7 @@ libprotobufd
 
 
 [rootpath_protobuf]
-C:/.conan/0f4636/1
+C:/.conan/873aab/1
 
 [name_protobuf]
 protobuf
@@ -122,11 +129,79 @@ cmake_find_package=Protobuf
 cmake_find_package_multi=protobuf
 
 
+[includedirs_gtest]
+C:/Users/Escow/.conan/data/gtest/cci.20210126/_/_/package/5ad274d83035c78ba2b205e6cf4f1b317aee8e05/include
+
+[libdirs_gtest]
+C:/Users/Escow/.conan/data/gtest/cci.20210126/_/_/package/5ad274d83035c78ba2b205e6cf4f1b317aee8e05/lib
+
+[bindirs_gtest]
+
+
+[resdirs_gtest]
+
+
+[builddirs_gtest]
+C:/Users/Escow/.conan/data/gtest/cci.20210126/_/_/package/5ad274d83035c78ba2b205e6cf4f1b317aee8e05/
+
+[libs_gtest]
+gtest_main
+gmock_main
+gmock
+gtest
+
+[system_libs_gtest]
+
+
+[defines_gtest]
+
+
+[cppflags_gtest]
+
+
+[cxxflags_gtest]
+
+
+[cflags_gtest]
+
+
+[sharedlinkflags_gtest]
+
+
+[exelinkflags_gtest]
+
+
+[sysroot_gtest]
+
+
+[frameworks_gtest]
+
+
+[frameworkdirs_gtest]
+
+
+[rootpath_gtest]
+C:/Users/Escow/.conan/data/gtest/cci.20210126/_/_/package/5ad274d83035c78ba2b205e6cf4f1b317aee8e05
+
+[name_gtest]
+gtest
+
+[version_gtest]
+cci.20210126
+
+[generatornames_gtest]
+cmake_find_package=GTest
+cmake_find_package_multi=GTest
+
+[generatorfilenames_gtest]
+
+
+
 [includedirs_zlib]
-C:/Users/Escow/.conan/data/zlib/1.2.11/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/include
+C:/Users/Escow/.conan/data/zlib/1.2.11/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/include
 
 [libdirs_zlib]
-C:/Users/Escow/.conan/data/zlib/1.2.11/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/lib
+C:/Users/Escow/.conan/data/zlib/1.2.11/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/lib
 
 [bindirs_zlib]
 
@@ -135,7 +210,7 @@ C:/Users/Escow/.conan/data/zlib/1.2.11/_/_/package/d057732059ea44a47760900cb5e48
 
 
 [builddirs_zlib]
-C:/Users/Escow/.conan/data/zlib/1.2.11/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/
+C:/Users/Escow/.conan/data/zlib/1.2.11/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/
 
 [libs_zlib]
 zlib
@@ -171,7 +246,7 @@ zlib
 
 
 [rootpath_zlib]
-C:/Users/Escow/.conan/data/zlib/1.2.11/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714
+C:/Users/Escow/.conan/data/zlib/1.2.11/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab
 
 [name_zlib]
 zlib
@@ -187,8 +262,10 @@ cmake_find_package_multi=ZLIB
 
 
 
+[USER_gtest]
 [USER_protobuf]
 [USER_zlib]
 [ENV_protobuf]
-PATH=["C:\.conan\0f4636\1\bin"]
+PATH=["C:\.conan\873aab\1\bin"]
+[ENV_gtest]
 [ENV_zlib]

@@ -3,8 +3,9 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Label="Conan-RootDirs">
-    <Conan-protobuf-Root>C:\.conan\0f4636\1</Conan-protobuf-Root>
-    <Conan-zlib-Root>$(USERPROFILE)\.conan\data\zlib\1.2.11\_\_\package\d057732059ea44a47760900cb5e4855d2bea8714</Conan-zlib-Root>
+    <Conan-protobuf-Root>C:\.conan\873aab\1</Conan-protobuf-Root>
+    <Conan-gtest-Root>$(USERPROFILE)\.conan\data\gtest\cci.20210126\_\_\package\5ad274d83035c78ba2b205e6cf4f1b317aee8e05</Conan-gtest-Root>
+    <Conan-zlib-Root>$(USERPROFILE)\.conan\data\zlib\1.2.11\_\_\package\3fb49604f9c2f729b85ba3115852006824e72cab</Conan-zlib-Root>
   </PropertyGroup>
   <PropertyGroup Label="ConanVariables">
     <ConanPackageName></ConanPackageName>
@@ -12,15 +13,15 @@
     <ConanCompilerFlags></ConanCompilerFlags>
     <ConanLinkerFlags></ConanLinkerFlags>
     <ConanPreprocessorDefinitions></ConanPreprocessorDefinitions>
-    <ConanIncludeDirectories>C:\.conan\0f4636\1\include;$(USERPROFILE)\.conan\data\zlib\1.2.11\_\_\package\d057732059ea44a47760900cb5e4855d2bea8714\include;</ConanIncludeDirectories>
+    <ConanIncludeDirectories>C:\.conan\873aab\1\include;$(USERPROFILE)\.conan\data\gtest\cci.20210126\_\_\package\5ad274d83035c78ba2b205e6cf4f1b317aee8e05\include;$(USERPROFILE)\.conan\data\zlib\1.2.11\_\_\package\3fb49604f9c2f729b85ba3115852006824e72cab\include;</ConanIncludeDirectories>
     <ConanResourceDirectories></ConanResourceDirectories>
-    <ConanLibraryDirectories>C:\.conan\0f4636\1\lib;$(USERPROFILE)\.conan\data\zlib\1.2.11\_\_\package\d057732059ea44a47760900cb5e4855d2bea8714\lib;</ConanLibraryDirectories>
-    <ConanBinaryDirectories>C:\.conan\0f4636\1\bin;</ConanBinaryDirectories>
-    <ConanLibraries>libprotocd.lib;libprotobufd.lib;zlib.lib;</ConanLibraries>
+    <ConanLibraryDirectories>C:\.conan\873aab\1\lib;$(USERPROFILE)\.conan\data\gtest\cci.20210126\_\_\package\5ad274d83035c78ba2b205e6cf4f1b317aee8e05\lib;$(USERPROFILE)\.conan\data\zlib\1.2.11\_\_\package\3fb49604f9c2f729b85ba3115852006824e72cab\lib;</ConanLibraryDirectories>
+    <ConanBinaryDirectories>C:\.conan\873aab\1\bin;</ConanBinaryDirectories>
+    <ConanLibraries>libprotoc.lib;libprotobuf.lib;gtest_main.lib;gmock_main.lib;gmock.lib;gtest.lib;zlib.lib;</ConanLibraries>
     <ConanSystemDeps></ConanSystemDeps>
   </PropertyGroup>
   <PropertyGroup>
-    <LocalDebuggerEnvironment>PATH=%PATH%;C:\.conan\0f4636\1\bin;</LocalDebuggerEnvironment>
+    <LocalDebuggerEnvironment>PATH=%PATH%;C:\.conan\873aab\1\bin;</LocalDebuggerEnvironment>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <ItemDefinitionGroup>

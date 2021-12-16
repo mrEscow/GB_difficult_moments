@@ -1,5 +1,6 @@
 [requires]
 protobuf/3.17.1
+gtest/cci.20210126
 
 [generators]
 visual_studio

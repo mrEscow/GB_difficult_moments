@@ -1,12 +1,13 @@
 [settings]
     arch=x86_64
-    build_type=Debug
+    build_type=Release
     compiler=Visual Studio
-    compiler.runtime=MDd
+    compiler.runtime=MD
     compiler.version=16
     os=Windows
 
 [requires]
+    gtest/cci.20210126
     protobuf/3.Y.Z
 
 [options]
@@ -15,18 +16,23 @@
 [full_settings]
     arch=x86_64
     arch_build=x86_64
-    build_type=Debug
+    build_type=Release
     compiler=Visual Studio
-    compiler.runtime=MDd
+    compiler.runtime=MD
     compiler.version=16
     os=Windows
     os_build=Windows
 
 [full_requires]
-    protobuf/3.17.1:390b80578bf6c7353bb1fcd9b8fe1b4987dc6ea1
-    zlib/1.2.11:d057732059ea44a47760900cb5e4855d2bea8714
+    gtest/cci.20210126:5ad274d83035c78ba2b205e6cf4f1b317aee8e05
+    protobuf/3.17.1:9e56137bbb1f5dae27f8e6f5a1977466799557b9
+    zlib/1.2.11:3fb49604f9c2f729b85ba3115852006824e72cab
 
 [full_options]
+    gtest:build_gmock=True
+    gtest:hide_symbols=False
+    gtest:no_main=False
+    gtest:shared=False
     protobuf:lite=False
     protobuf:shared=False
     protobuf:with_rtti=True

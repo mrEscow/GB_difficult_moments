@@ -58,3 +58,5 @@
 #include <shared_mutex>
 
 #include <execution>
+
+#include <cassert>
