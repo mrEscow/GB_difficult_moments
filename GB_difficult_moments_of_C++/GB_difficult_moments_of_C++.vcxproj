@@ -65,6 +65,8 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="build\conanbuildinfo.props" />
+    <Import Project="..\x64\Debug\.conan\conanbuildinfo.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -147,15 +149,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="car.pb.cc" />
+    <ClCompile Include="Lesson_7.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="proto\FullName.pb.cc" />
+    <ClCompile Include="proto\Students.pb.cc" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="PhoneBook.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="car.pb.h" />
+    <ClInclude Include="Header.h" />
     <ClInclude Include="Lesson_1.h" />
+    <ClInclude Include="Lesson_2.h" />
+    <ClInclude Include="Lesson_3.h" />
+    <ClInclude Include="Lesson_4.h" />
+    <ClInclude Include="Lesson_5.h" />
+    <ClInclude Include="Lesson_6.h" />
+    <ClInclude Include="Lesson_7.h" />
+    <ClInclude Include="MyNameSpace.h" />
+    <ClInclude Include="proto\FullName.pb.h" />
+    <ClInclude Include="proto\Students.pb.h" />
+    <ClInclude Include="Timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets">
-  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets" />
 </Project>
